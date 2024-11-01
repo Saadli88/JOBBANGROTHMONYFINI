@@ -1,0 +1,72 @@
+.entreprise-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .content {
+    display: flex;
+    flex-grow: 1;
+    background-color: #f5f5f5;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 30px 0; /* Ajout de padding en haut et en bas pour espacer les éléments */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Ombre légère pour la séparation */
+    height: 100%; /* Assurer que la sidebar prend toute la hauteur */
+    
+    
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar li {
+    padding: 15px 20px; /* Espacer les éléments */
+    margin-bottom: 10px; /* Espacement entre les éléments */
+    cursor: pointer;
+    background-color: #34495e; /* Couleur d'arrière-plan des éléments */
+    border-radius: 5px; /* Coins arrondis */
+    transition: background-color 0.3s ease;
+    color: white;
+    text-decoration: none;
+    
+  }
+  .sidebar-link {
+    color: white; /* Couleur du texte */
+    text-decoration: none; /* Enlève le soulignement */
+    display: block; /* Permet au lien de remplir le <li> */
+    
+  }
+  
+  
+  
+  .sidebar li:hover {
+    background-color: #84b6e88a; /* Couleur au survol */
+    
+  }
+  
+  .main-content2 {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    
+  }
+
+  
+    
+  .main-content2 h1 {
+    margin-top: 400px;
+    text-align: center;
+    font-size: 30px;
+    color: rgba(10, 10, 92, 0.966);
+    
+  }
+  

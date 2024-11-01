@@ -1,0 +1,196 @@
+.lmj-emploi-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.emploi-container {
+  border: 1px solid #ddd;
+  position: relative;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  transition: box-shadow 0.3s;
+  max-width: 300px; /* Augmenter la largeur maximale */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  z-index: 1; /* Make sure this is lower than the popups */
+  
+}
+
+
+.emploi-container:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Légère augmentation de l'ombre au survol */
+}
+
+.jobTitle {
+  font-size: 1.2em; /* Réduire la taille du texte */
+  color: #333;
+  width: 120%; /* Prendre toute la largeur */
+  text-align: center; /* Centrer le texte */
+  
+}
+
+
+.jobEntreprise,
+.jobSector,
+.jobSalary,
+.jobLocation {
+  display: block;
+  margin: 4px 0;
+  color: #282727;
+  text-align: center;
+}
+
+button {
+  background-color:#202d8d;
+  color: white;
+  border: none;
+  padding: 8px 12px; /* Réduire le padding */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 0.9em; /* Réduire la taille de la police du bouton */
+}
+
+button:hover {
+  background-color: #2a77ca;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* Ensure it's above all other elements */
+  transition: none; /* Désactiver les transitions */
+  animation: none; /* Désactiver les animations */
+}
+
+.popup-content {
+  background-color: white;
+  padding: 15px; /* Réduire le padding */
+  border-radius: 5px;
+  position: relative;
+  max-width: 300px; /* Limiter la largeur du popup */
+  width: 80%; /* Ajuster pour un meilleur affichage sur mobile */
+  transition: none; /* Désactiver les transitions */
+  animation: none; /* Désactiver les animations */
+  z-index: 10000;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 1.2em; /* Ajuster la taille de la police */
+  color: #333;
+}
+.buttonP{
+  background-color: #d6415d; /* Couleur rouge */
+  margin-top:20px;
+}
+
+.buttonP:hover{
+  background-color: #901723;
+}
+
+.emploi-group {
+  display: flex;
+  justify-content: space-between; /* Distribuer l'espace entre les éléments */
+  margin: 10px 0; /* Espacement entre les groupes */
+}
+
+.emploi-container {
+  position: relative; /* Nécessaire pour positionner l'icône */
+  padding: 20px; /* Ajuste si nécessaire */
+  border: 1px solid #ccc; /* Exemple de style */
+  margin-bottom: -40px; /* Exemple de style */
+  z-index: 1; /* Make sure this is lower than the popups */
+}
+
+.like-icon {
+  position: absolute;
+  top: 20px; /* Ajuste la distance du haut */
+  right: 20px; /* Ajuste la distance de droite */
+}
+.liked-jobs {
+  margin-top: 20px;
+}
+.liked-jobs ul {
+  list-style-type: none;
+  padding: 0;
+}
+.details-popup {
+  position: fixed;
+  top: 5;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000; /* Plus élevé que les autres éléments */
+  transition: none; /* Désactiver les transitions */
+  animation: none; /* Désactiver les animations */
+  border-color: #333;
+}
+
+
+.details-popup-content {
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+  position: relative;
+  max-width: 70000px; /* Largeur maximale */
+  overflow-y: auto; /* Permet le défilement vertical */
+  overflow-x: hidden; /* Empêche le défilement horizontal */
+  transition: none; /* Désactiver les transitions */
+  animation: none; /* Désactiver les animations */
+  border-color: #333;
+  border: 1px solid #ddd;
+  position: relative;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 10px 0;
+  transition: box-shadow 0.3s;
+  max-width: 3000px; /* Augmenter la largeur maximale */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  z-index: 10000; /* Same as above */
+}
+
+.details-content {
+  max-height: 70vh; /* Limite la hauteur du contenu */
+  overflow-y: auto; /* Permet le défilement vertical */
+  transition: none; /* Désactiver les transitions */
+  animation: none; /* Désactiver les animations */
+  border-color: #333;
+}
+
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.details-popup-content:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Légère augmentation de l'ombre au survol */
+}
+.details-popup p {
+  animation: none; /* Désactiver l'animation */
+  transition: none; /* Désactiver les transitions */
+  
+}

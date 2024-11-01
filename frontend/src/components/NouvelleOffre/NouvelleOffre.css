@@ -1,0 +1,114 @@
+/* OffreEmploi.css */
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .offre-emploi-container {
+    width: 350px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #b9c6f483;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(5, 3, 83, 0.1);
+    text-align: center;
+    position: relative;
+    animation: fadeIn 0.8s ease-in-out;
+    margin-top: 130px;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #1611a0;
+    margin-bottom: 1rem;
+    animation: slideIn 1s ease-out;
+  }
+  
+  .input-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+    animation: slideIn 0.8s ease-out;
+    animation-delay: 0.2s;
+    animation-fill-mode: both;
+  }
+  
+  label {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+  
+  input[type="text"], input[type="number"], select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #b9c6f483;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(5, 3, 83, 0.05);
+    margin-top: 0.3rem;
+    transition: all 0.3s ease;
+  }
+  
+  input[type="text"]:focus, input[type="number"]:focus, select:focus {
+    box-shadow: 0 0 8px rgba(149, 190, 194, 0.8);
+    transform: scale(1.05);
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #d6415d; /* Couleur rouge */
+  color: white;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s, transform 0.3s ease;
+    animation: fadeIn 0.9s ease-out;
+    animation-delay: 0.4s;
+    animation-fill-mode: both;
+  }
+  
+  button:hover {
+    background-color: #901723; /* Couleur rouge foncé */
+    transform: scale(1.05);
+  }
+  
+  .emploi-container-details:after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 12px;
+    background-color: rgba(149,190,194,255);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .emploi-container-details:hover::after {
+    opacity: 0.2;
+  }
+  

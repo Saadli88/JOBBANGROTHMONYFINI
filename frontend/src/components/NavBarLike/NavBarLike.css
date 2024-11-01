@@ -1,0 +1,78 @@
+
+nav {
+    position: fixed; /* Fixe le menu en haut de la page */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1E398B; /* Bleu pour le conteneur */
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0px 10px; /* Espacement intérieur */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    z-index: 1000; /* Assure que la barre de navigation reste au-dessus des autres éléments */
+  }
+  
+  /* Conteneur pour le logo et le lien "Accueil" */
+  .nav-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  /* Conteneur pour le logo et le lien "Accueil" */
+  .nav-logo-and-link {
+    display: flex;
+    align-items: center;
+    margin-right: auto; /* Pousse les éléments suivants vers la droite */
+  }
+  
+  /* Style du logo pour le rendre plus petit */
+  .nav-logo-and-link img {
+    height: 85px; /* Ajustez la hauteur du logo selon vos besoins */
+    margin-right: 50px; /* Espacement entre le logo et le lien "Accueil" */
+  }
+  
+  /* Style des liens */
+  .navbar-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px; /* Ajustez la taille de la police selon vos besoins */
+  }
+  
+  /* Style du lien "Accueil" pour le rendre en gras */
+  .navbar-link-bold {
+    font-weight: bold;
+  }
+  
+  /* Ajoutez une couleur de survol pour les liens */
+  .navbar-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Conteneur pour les autres liens de la barre de navigation */
+  .navbar-links-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacement entre les éléments */
+  }
+  
+  /* Style des autres liens */
+  .navbar-links-container a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px; /* Ajustez la taille de la police selon vos besoins */
+  }
+  
+  /* Ajoutez une couleur de survol pour les autres liens */
+  .navbar-links-container a:hover {
+    text-decoration: underline;
+  }
+  .heart2-icon {
+    margin-left:1250px; /* Pousse l'icône à droite */
+    padding: 10px; /* Ajustez le padding selon vos besoins */
+    display: flex; /* Pour un affichage correct */
+    
+    
+  }
+  
