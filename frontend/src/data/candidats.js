@@ -15,7 +15,7 @@ export const CandidatsList = [
   {
     nom: "Benoît Martin",
     email: "benoit.martin@yahoo.com",
-    mot_de_passe: "Benoit2024"
+    mot_de_passe: "Benoit2024!"
   },
   {
     nom: "Claire Bernard",
@@ -25,7 +25,7 @@ export const CandidatsList = [
   {
     nom: "David Leroy",
     email: "david.leroy@outlook.com",
-    mot_de_passe: "Leroy2024"
+    mot_de_passe: "Leroy!2024"
   },
   {
     nom: "Élodie Moreau",
@@ -35,12 +35,12 @@ export const CandidatsList = [
   {
     nom: "François Dubois",
     email: "francois.dubois@yahoo.com",
-    mot_de_passe: "F2000Dubois"
+    mot_de_passe: "F2000Dubois!"
   },
   {
     nom: "Gabrielle Lefevre",
     email: "gabrielle.lefevre@outlook.com",
-    mot_de_passe: "Gabi!2024"
+    mot_de_passe: "Gabi!2024!"
   },
   {
     nom: "Hugo Fontaine",
@@ -50,7 +50,7 @@ export const CandidatsList = [
   {
     nom: "Isabelle Garnier",
     email: "isabelle.garnier@hotmail.com",
-    mot_de_passe: "Izzy2024"
+    mot_de_passe: "Izzy2024!"
   },
   {
     nom: "Jules Caron",
