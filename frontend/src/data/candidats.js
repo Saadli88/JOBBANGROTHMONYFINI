@@ -36,7 +36,8 @@ export const CandidatsList = [
     nom: "François Dubois",
     email: "francois.dubois@yahoo.com",
     mot_de_passe: "F2000Dubois!"
-  },
+  }
+  /** ,
   {
     nom: "Gabrielle Lefevre",
     email: "gabrielle.lefevre@outlook.com",
@@ -56,5 +57,5 @@ export const CandidatsList = [
     nom: "Jules Caron",
     email: "jules.caron@yahoo.com",
     mot_de_passe: "Jules#24"
-  }
+  }*/
 ];
