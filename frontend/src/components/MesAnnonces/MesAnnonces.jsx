@@ -30,6 +30,7 @@ const fetchEmploi = async()=>{
 
   if(response.ok){
      // setEmplois(json)
+     
      dispatch({type: 'SET_EMPLOIS', payload:json})
   }
 }
@@ -42,8 +43,8 @@ if(entreprise){
 
 },[dispatch, entreprise])
 
-
 return (
+
   <div>
     <ul className="lmj-emploi-list">
     {emplois && emplois.map((emploi) =>(

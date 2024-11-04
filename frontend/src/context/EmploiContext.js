@@ -10,13 +10,23 @@ export const EmploiContext = createContext()
                 emplois: action.payload
             }
         case 'CREATE_EMPLOIS':
+            console.log("createEmploi")
             return {
                 emplois: [action.payload, ...state.emplois]
             }
-            case 'DELETE_EMPLOIS':
-                return {
-                    emplois: state.emplois.filter((e)=> e._id !== action.payload._id)
-                }
+        case 'DELETE_EMPLOIS':
+            return {
+              emplois: state.emplois.filter(
+                (e) => e._id !== action.payload._id
+              ),
+            };
+        case 'UPDATE_EMPLOIS':
+            return {
+                emplois: state.emplois.map((emploi) =>
+                    emploi._id === action.payload._id ? action.payload : emploi
+                  )};
+                    
+                   
         default :
         return state
     }

@@ -74,8 +74,11 @@ const EmploiDetail = ({ emploi }) => {
     });
     const json = await response.json();
     if (response.ok) {
-      dispatch({ type: 'UPDATE_EMPLOIS', payload: json });
+
+      dispatch({ type: 'UPDATE_EMPLOIS', payload: editedEmploi });
+    
       toggleEdit();
+      
     } else {
       setError('Échec de la mise à jour: ' + json.message);
     }
