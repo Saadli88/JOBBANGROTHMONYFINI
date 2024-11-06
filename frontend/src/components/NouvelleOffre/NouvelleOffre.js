@@ -18,6 +18,7 @@ const NouvelleOffre = () =>{
     const[description, setDescription] = useState('')
     const[responsabilite, setResponsabilite] = useState('')
     const[exigence, setExigence] = useState('')
+    const[visibility, setVisibility] = useState('')//visibility
 
     const[error, setError] = useState(null)
 
@@ -40,7 +41,9 @@ const handleSubmit = async (e) => {
         email_employeur: emailEmployeur, 
         description: description,
         responsabilite: responsabilite,
-        exigence:exigence}
+        exigence:exigence,
+        visibility:visibility
+      }
 
 
         const response = await fetch('/api/offreEmploi/', {
@@ -66,6 +69,7 @@ const handleSubmit = async (e) => {
             setEmailEmployeur('')
             setDescription('')
             setResponsabilite('')
+            setVisibility(true)//visibility
             setExigence('')
             setError(null)
             console.log('Offre Ajouter mon amour')

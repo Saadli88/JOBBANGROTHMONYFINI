@@ -258,7 +258,7 @@ const EmploiDetail = ({ emploi }) => {
                   <div className="inputs-groups">
                     <label>Afficher aux candidats</label>
                     <label className="switch">
-                      <input type="checkbox" checked={isVisible} onChange={handleVisibilityChange} />
+                      <input type="checkbox" checked={isVisible} onChange={handleVisibilityChange} value={editedEmploi.visibility}/>
                       <span className="slider"></span>
                     </label>
                   </div>

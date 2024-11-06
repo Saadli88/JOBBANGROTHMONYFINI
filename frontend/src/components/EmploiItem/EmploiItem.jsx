@@ -44,6 +44,9 @@ const EmploiItem = ({ searchTerm, location, likedJobs, setLikedJobs }) => {
 
   const groupedEmplois = filterEmplois(EmploiList);
 
+
+  //ajoute hide if visibility is false
+
   return (
     <div>
       <ul className="lmj-emploi-list">

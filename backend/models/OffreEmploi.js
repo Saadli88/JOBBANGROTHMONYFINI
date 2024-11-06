@@ -42,6 +42,11 @@ const offreSchema = new Schema({
       entreprise_id:{
         type: String,
         required: true
+      },
+
+      visibility:{
+        type: Boolean,
+        require: true
       }
     }, { timestamps: true });
 

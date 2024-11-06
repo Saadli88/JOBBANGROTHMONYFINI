@@ -60,12 +60,12 @@ const avoirOffre = async(req,res) => {
 //cree une offre
 const creeOffre = async(req,res) =>
      {
-    const{nom_entreprise,nom_poste,salaire,emplacement,categorie,email_employeur, description, responsabilite, exigence} = req.body;
+    const{nom_entreprise,nom_poste,salaire,emplacement,categorie,email_employeur, description, responsabilite, exigence, visibility} = req.body;
 
 try{
     const entreprise_id = req.entreprise._id
     const emploi = await OffreEmploi.create({
-        nom_entreprise,nom_poste,salaire,emplacement,categorie,email_employeur, description, responsabilite, exigence,entreprise_id
+        nom_entreprise,nom_poste,salaire,emplacement,categorie,email_employeur, description, responsabilite, exigence,entreprise_id, visibility
     });
     res.status(200).json(emploi);
     }catch(error){
