@@ -6,8 +6,10 @@ import EntrepriseRoute from './routes/entreprise.js';
 import mongoose from 'mongoose';
 
 
+
 dotenv.config();
 const app = express();
+const port = process.env.PORT || 4000;
 
 
 // Middleware pour gérer les requêtes en JSON
