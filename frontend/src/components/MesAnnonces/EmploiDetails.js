@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useEmploiContext } from "../../hooks/useEmploiContext";
 import "./EmploiDetails.css";
 import edit from '../../images/edit.png';
@@ -6,7 +6,7 @@ import { locations } from '../../data/locations';
 import { useEntrepriseContext } from "../../hooks/useEntrepriseContext";
 
 const EmploiDetail = ({ emploi }) => {
-  const {entreprise} = useEntrepriseContext()
+  const { entreprise } = useEntrepriseContext();
   const { dispatch } = useEmploiContext();
   const [showDetails, setShowDetails] = useState(false);
   const [showEmail, setShowEmail] = useState(false);
@@ -14,21 +14,23 @@ const EmploiDetail = ({ emploi }) => {
   const [error, setError] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [editedEmploi, setEditedEmploi] = useState({ ...emploi });
-  const [isVisible, setIsVisible] = useState(emploi.isVisible || false); // État pour le switch
+  const [visibility, setIsVisible] = useState(emploi.visibility || false);
 
-  // Fonction pour supprimer l'emploi
+  useEffect(() => {
+    setIsVisible(emploi.visibility);
+  }, [emploi.visibility]);
+
   const handleClick = async () => {
     setLoading(true);
     setError(null);
-    if(!entreprise){
-      return
+    if (!entreprise) {
+      return;
     }
 
     const response = await fetch('/api/offreEmploi/' + emploi._id, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${entreprise.token}`
-
       }
     });
     const json = await response.json();
@@ -40,45 +42,33 @@ const EmploiDetail = ({ emploi }) => {
     }
   };
 
-  // Fonction pour afficher/masquer les détails
   const toggleDetails = () => setShowDetails(prev => !prev);
-
-  // Fonction pour afficher/masquer l'email de l'employeur
   const toggleEmail = () => setShowEmail(prev => !prev);
-
-  // Fonction pour activer/désactiver le mode édition
   const toggleEdit = () => setIsEditing(prev => !prev);
 
-  // Fonction pour gérer les changements dans le formulaire d'édition
   const handleChange = (e) => {
     const { name, value } = e.target;
     setEditedEmploi(prev => ({ ...prev, [name]: value }));
   };
 
-  // Fonction pour gérer le changement du switch de visibilité
-  const handleVisibilityChange = () => {
-    setIsVisible(prev => !prev);
-    setEditedEmploi(prev => ({ ...prev, isVisible: !prev.isVisible })); // Met à jour l'état de visibilité dans l'objet d'emploi
-  };
-
-  // Fonction pour soumettre les modifications
   const handleSubmitEdit = async (e) => {
     e.preventDefault();
+    const updatedEmploi = { ...editedEmploi };
+
+    
+
     const response = await fetch('/api/offreEmploi/' + emploi._id, {
       method: 'PATCH',
-      body: JSON.stringify(editedEmploi),
+      body: JSON.stringify(updatedEmploi),
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${entreprise.token}`
-      },
+      }
     });
     const json = await response.json();
     if (response.ok) {
-
-      dispatch({ type: 'UPDATE_EMPLOIS', payload: editedEmploi });
-    
+      dispatch({ type: 'UPDATE_EMPLOIS', payload: updatedEmploi });
       toggleEdit();
-      
     } else {
       setError('Échec de la mise à jour: ' + json.message);
     }
@@ -91,7 +81,6 @@ const EmploiDetail = ({ emploi }) => {
           <div className="image-containerB" onClick={toggleEdit}>
             <img src={edit} alt="edit" className="small-image" />
           </div>
-          
           <h3 className="jobTitle" onClick={toggleDetails} style={{ cursor: "pointer" }}>
             {emploi.nom_poste}
           </h3>
@@ -135,7 +124,7 @@ const EmploiDetail = ({ emploi }) => {
               </div>
             </div>
           )}
-          
+
           {error && <div className="error-message">{error}</div>}
 
           <button onClick={handleClick} className="delete-button" disabled={loading}>
@@ -256,13 +245,18 @@ const EmploiDetail = ({ emploi }) => {
                     />
                   </div>
                   <div className="inputs-groups">
-                    <label>Afficher aux candidats</label>
+                    <label>Visible</label>
                     <label className="switch">
-                      <input type="checkbox" checked={isVisible} onChange={handleVisibilityChange} value={editedEmploi.visibility}/>
+                      <input
+                        type="checkbox"
+                        checked={visibility}
+                        value={editedEmploi.visibility}
+                        onChange={(e) => setIsVisible(e.target.checked)}
+                      />
                       <span className="slider"></span>
                     </label>
                   </div>
-                  <button type="submit" className="submit-button">Sauvegarder</button>
+                  <button type="submit">Enregistrer les modifications</button>
                 </form>
               </div>
             </div>

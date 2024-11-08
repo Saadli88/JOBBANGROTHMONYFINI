@@ -9,7 +9,8 @@ export const EmploiList = [
       email_employeur: "rh@innovateurstech.com",
       description: "Développer des applications web innovantes pour nos clients.",
       responsabilite: "Conception, développement, et maintenance d'applications.",
-      exigence: "Expérience en JavaScript, Node.js, et React."
+      exigence: "Expérience en JavaScript, Node.js, et React.",
+      visibility: true
     },
     {
       nom_entreprise: "Innovateurs Tech",
@@ -20,7 +21,8 @@ export const EmploiList = [
       email_employeur: "rh@innovateurstech.com",
       description: "Gérer l'infrastructure et les outils de déploiement.",
       responsabilite: "Automatisation des pipelines et maintenance des serveurs.",
-      exigence: "Connaissance de Docker, Kubernetes, et CI/CD."
+      exigence: "Connaissance de Docker, Kubernetes, et CI/CD.",
+      visibility: true
     },
     {
       nom_entreprise: "Solutions Créatives",
@@ -31,7 +33,8 @@ export const EmploiList = [
       email_employeur: "recrutement@solutionscreatives.ca",
       description: "Conception d'interfaces utilisateur attractives et fonctionnelles.",
       responsabilite: "Maquettes, wireframes, et tests utilisateurs.",
-      exigence: "Expérience en Figma et Adobe XD."
+      exigence: "Expérience en Figma et Adobe XD.",
+      visibility: true
     },
     {
       nom_entreprise: "Solutions Créatives",
@@ -42,7 +45,8 @@ export const EmploiList = [
       email_employeur: "recrutement@solutionscreatives.ca",
       description: "Supervision de projets créatifs de bout en bout.",
       responsabilite: "Coordination des équipes et gestion des délais.",
-      exigence: "Certification PMP et expérience en gestion de projets créatifs."
+      exigence: "Certification PMP et expérience en gestion de projets créatifs.",
+      visibility: true
     },
     {
       nom_entreprise: "Tech Verte",
